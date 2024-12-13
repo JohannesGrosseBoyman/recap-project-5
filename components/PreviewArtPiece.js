@@ -2,8 +2,6 @@ import Image from "next/image";
 import styled from "styled-components";
 
 export function PreviewArtPiece({ image, artist, title }) {
-
-
   const Card = styled.div`
     display: flex;
     flex-direction: column;
@@ -17,17 +15,10 @@ export function PreviewArtPiece({ image, artist, title }) {
     padding: 10px;
   `;
   return (
-    
-      <Card>
-        <h2>{title}</h2>
-        <Image
-          width={50}
-          height={50}
-          src={image}
-          alt={`${title} by ${artist}`}
-        />
-        <p>{artist}</p>
-      </Card>
-    
+    <Card>
+      <h2>{title}</h2>
+      <Image width={50} height={50} src={image} alt={`${title} by ${artist}`} />
+      <p>{artist}</p>
+    </Card>
   );
 }
