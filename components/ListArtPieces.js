@@ -1,7 +1,7 @@
 import { PreviewArtPiece } from "./PreviewArtPiece.js";
 import styled from "styled-components";
 
-export function ListArtPieces({ data }) {
+export function ListArtPieces({ data, handleToggleFavorite, artPieceInfo }) {
   const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +12,8 @@ export function ListArtPieces({ data }) {
     <Container>
       {data.map((artPiece) => (
         <PreviewArtPiece
+        artPieceInfo={artPieceInfo}
+        handleToggleFavorite={handleToggleFavorite}
           key={data.slug}
           image={artPiece.imageSource}
           artist={artPiece.artist}
