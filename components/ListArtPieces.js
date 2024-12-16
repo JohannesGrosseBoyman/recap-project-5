@@ -16,6 +16,7 @@ export function ListArtPieces({ data }) {
           image={artPiece.imageSource}
           artist={artPiece.artist}
           title={artPiece.name}
+          slug={artPiece.slug}
         ></PreviewArtPiece>
       ))}
     </Container>

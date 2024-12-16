@@ -1,7 +1,8 @@
 import Image from "next/image";
 import styled from "styled-components";
+import Link from "next/link";
 
-export function PreviewArtPiece({ image, artist, title }) {
+export function PreviewArtPiece({ image, artist, title, slug }) {
   const Card = styled.div`
     display: flex;
     flex-direction: column;
@@ -14,11 +15,18 @@ export function PreviewArtPiece({ image, artist, title }) {
     width: 30%;
     padding: 10px;
   `;
+
+  const StyledLink = styled(Link)`
+  text-decoration: none
+  `
+
   return (
+    <StyledLink href={`/art/${slug}`}>
     <Card>
       <h2>{title}</h2>
       <Image width={50} height={50} src={image} alt={`${title} by ${artist}`} />
       <p>{artist}</p>
     </Card>
+    </StyledLink>
   );
 }
