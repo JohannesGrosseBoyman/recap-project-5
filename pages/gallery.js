@@ -1,10 +1,10 @@
 import { ListArtPieces } from "@/components/ListArtPieces";
 import { PreviewArtPiece } from "@/components/PreviewArtPiece";
-export default function Gallery({data}) {
+export default function Gallery({data, handleToggleFavorite, artPieceInfo}) {
 
 
     return (
-        <ListArtPieces data={data}>
+        <ListArtPieces artPieceInfo={artPieceInfo} data={data} handleToggleFavorite={handleToggleFavorite}>
         </ListArtPieces>
     )
 }
